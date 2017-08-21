@@ -1,12 +1,9 @@
-Processo de Desenvolvimento:
+Development Process:
 
-Depois de finalizar a implementação o deve-se commitar no repositório do bitbucket executando:
+After completing the implementation you should commit to the bitbucket repository
 
-git push
-
-
-Se Desejar subir para o openshift utilizar o comando:
+If you desire send to openshift, use this command:
 
 git push openshift HEAD
 
-APENAS SUBIR NO OPENSHIFT DEPOIS DE MIMIFICAR O CÓDIGO
+ONLY SEND TO OPENSHIFT AFTER MIMIFY
