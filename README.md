@@ -7,3 +7,5 @@ If you desire send to openshift, use this command:
 git push openshift HEAD
 
 ONLY SEND TO OPENSHIFT AFTER MIMIFY
+
+To acess rooba: http://simpleweb-weeb.rhcloud.com
