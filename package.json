@@ -1,0 +1,12 @@
+{
+  "name": "RoobaServer",
+  "version": "1.0.1",
+  "description": "Node.js Simple Server",
+  "private": true,
+  "main": "start.js",
+  "scripts": {
+    "start": "node --use_strict start.js"
+  },
+  "author": "Bruno-Bot <0hoppe0@gmail.com>",
+  "license": "ISC"
+}
