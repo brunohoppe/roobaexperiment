@@ -1,0 +1,15 @@
+{
+  "name": "roobaexperiment",
+  "version": "1.0.0",
+  "description": "Rooba Server Experiment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bruno botelho - 0hoppe0@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.5.2",
+    "inert": "^4.2.1"
+  }
+}
