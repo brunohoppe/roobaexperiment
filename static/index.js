@@ -113,7 +113,7 @@ var expr = (function() {
 
     function loadPlayer(videoId) {
         document.getElementById('player').className = "show";
-        document.getElementById('player').src = 'http://www.youtube.com/embed/' + videoId;
+        document.getElementById('player').src = 'https://www.youtube.com/embed/' + videoId;
     }
 
     function setEventoHistory() {
