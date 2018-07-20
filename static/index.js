@@ -228,6 +228,26 @@ var expr = (function() {
     	checkHash();
     	verificaLocation();	
     }
-
+    function updateTransition() {
+        var el1 = document.querySelector(".el-small");
+        var el2 = document.querySelector(".el-big");
+        var el3 = document.querySelector(".el-media");
+        if (el1) {
+          el1.classList.remove("el-small");
+          el1.classList.add("el-media");
+        }
+        if (el2) {
+          el2.classList.remove("el-big");
+          el2.classList.add("el-small");
+        }
+        if (el3) {
+          el3.classList.remove("el-media");
+          el3.classList.add("el-big");      
+        }
+         
+        return;
+      }
+      
+      var intervalID = window.setInterval(updateTransition, 500);
     return iniciarApplication;
 })();
