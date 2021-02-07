@@ -1,35 +1,44 @@
 'use strict';
-const Hapi = require('hapi');
-const inert = require('inert');
+const Hapi = require('@hapi/hapi');
+const Inert = require('@hapi/inert');
+const Path = require('path');
+
 const env = process.env;
+const port = env.PORT || 3001;
 
-const server = new Hapi.Server();
-
-var port = env.PORT || 3001;
-
-server.connection({
-    port: port
+const server = new Hapi.Server({
+    port,
+    routes: {
+        files: {
+            relativeTo: Path.join(__dirname, 'static')
+        }
+    }
 });
 
+const provision = async () => {
 
-server.register([
-{
-    register: inert,
-    options: {}
-}], (err) => {
-    if (err) {
-        console.error(err);
-        throw err;
-    }
-    //Serving static files
+    await server.register(Inert);
+
     server.route({
         method: 'GET',
         path: '/{param*}',
         handler: {
             directory: {
-                path: 'static'
+                path: '.',
+                redirectToSlash: true,
+                index: true,
             }
         }
     });
-    server.start((err) => console.log('Server started at:', server.info.uri));
+
+    await server.start();
+
+    console.log('Server running at:', server.info.uri);
+};
+
+provision();
+
+process.on('unhandledRejection', (err) => {
+    console.log(err);
+    process.exit(1);
 });
